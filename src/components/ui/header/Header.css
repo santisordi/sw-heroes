@@ -1,0 +1,13 @@
+h1 {
+    font-family: 'Star Wars', sans-serif; 
+    font-size: 3rem; 
+    text-align: center;
+    border: 2px solid #ffe81f; 
+    padding: 0.5rem 2rem;
+    display: inline-block;
+    background-color: rgba(0, 0, 0, 0.5); 
+    box-shadow: 0 0 10px #ffe81f, 0 0 20px #ffe81f; 
+  }
+
+  
+  

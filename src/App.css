@@ -1,0 +1,127 @@
+@import url('https://fonts.cdnfonts.com/css/star-wars');
+
+body {
+  min-height: 100vh; 
+  background-image: url('/deathStar-wallpaper.png');
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat; 
+}
+
+.page {
+  font-family: 'Star Wars', sans-serif; 
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 800px;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+form {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.heroes {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  width: 100%;
+  gap: 32px;
+  margin-top: 16px;
+}
+
+.hero {
+  background-color: #222; 
+  color: #fff; 
+  padding: 1rem;
+  border: 2px solid #fff;
+  border-radius: 15px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  
+  /* Animación inicial de aparición */
+  animation: fadeInUp 0.8s ease forwards;
+  opacity: 0;
+
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.hero h3, .hero p {
+  margin: 0;
+}
+
+
+/* Hover: agrandar tarjeta y aumentar sombra */
+.hero:hover {
+  transform: scale(1.1);
+  background-color: rgba(0, 0, 0, 0.715);
+  transition: 0.5s ease-in-out;
+}
+
+/* Animación para la entrada de las tarjetas */
+@keyframes fadeInUp {
+  0% {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@media only screen and (max-width: 430px) {
+ 
+  .heroes {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  
+  form {
+    flex-direction: column; 
+    gap: 12px; 
+  }
+
+}
+
+@media only screen and (min-width: 768px) {
+  .page {
+    max-width: 90%;
+    padding: 0 24px; /* Más espacio lateral */
+  }
+
+  form {
+    flex-direction: row; /* Elementos en fila */
+    flex-wrap: wrap; /* Permite que pasen a una nueva línea si no caben */
+    gap: 16px;
+  }
+
+
+  form button {
+    padding: 10px 20px; /* Botón más cómodo para interactuar */
+    font-size: 16px;
+  }
+
+  .heroes {
+    grid-template-columns: repeat(2, 1fr); /* Dos columnas para tablets */
+    gap: 24px; /* Más espacio entre tarjetas */
+  }
+
+  .hero {
+    padding: 1.2rem;
+    font-size: 1rem; /* Texto ligeramente más grande */
+    border-radius: 10px; /* Bordes más suaves */
+  }
+}
