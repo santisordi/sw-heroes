@@ -8,6 +8,7 @@ import { useSearch } from "./hooks/useSearch";
 import { useSearchForm } from "./hooks/useSearchForm";
 import { useSort } from "./hooks/useSort";
 import { Loader } from "./components/ui/loader/Loader";
+import { useHeroSelection } from "./hooks/useHeroesSetelction";
 
 const App: React.FC = () => {
   const { sort, handleSort } = useSort();
@@ -33,6 +34,10 @@ const App: React.FC = () => {
     setSearch,
   });
 
+  const {
+    showPagination,
+  } = useHeroSelection();
+
   const paginatedHeroes = heroes.slice(firstIndex, lastIndex)
 
   return (
@@ -40,23 +45,26 @@ const App: React.FC = () => {
       <Header />
       <SearchForm
         handleChange={handleChange}
-        handleSubmit={handleSubmit}
+        handleSubmit={handleSubmit} 
         search={search}
         error={error}
         handleSort={handleSort}
         sort={sort}
       />
-      <main>{loading ? 
+      <main>
+        {loading ? 
         <div>
           {<Loader />}
         </div>
-        : <Heroes heroes={paginatedHeroes} isSearchPerformed ={isSearchPerformed} />}</main>
-      <Pagination
+        : <Heroes heroes={paginatedHeroes} isSearchPerformed={isSearchPerformed} />}
+        </main>
+      {showPagination && (
+        <Pagination
         heroesPerPage={heroesPerPage}
         currentPage={currentPage}
         setCurrentPage={setCurrentPage}
         totalHeroes={totalHeroes}
-      />
+      />)}
     </div>
   );
 };

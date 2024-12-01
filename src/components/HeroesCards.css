@@ -1,0 +1,21 @@
+.hero-container{
+    
+
+}
+.hero {
+    background-color: #222; 
+    color: #fff; 
+    padding: 1rem;
+    border: 2px solid #fff;
+    border-radius: 15px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    
+    /* Animación inicial de aparición */
+    animation: fadeInUp 0.8s ease forwards;
+    opacity: 0;
+  
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  }
+
+  

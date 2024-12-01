@@ -6,11 +6,16 @@ export type Hero = {
     height: number
     mass: number
     skin_color: string
+    image: string
 }
 
 export interface HeroesProps{
     heroes: Hero[]
 }
+
+export interface HeroesCardProps {
+    hero: Hero;  
+  }
   
 export interface UseHeroesProps {
     search: string;

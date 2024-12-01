@@ -2,7 +2,7 @@
 
 body {
   min-height: 100vh; 
-  background-image: url('/deathStar-wallpaper.png');
+  background-image: url('deathStar-wallpaper.png');
   background-size: cover; 
   background-position: center; 
   background-repeat: no-repeat; 
@@ -43,6 +43,7 @@ form {
 }
 
 .hero {
+  margin-bottom: 20px;
   background-color: #222; 
   color: #fff; 
   padding: 1rem;
@@ -99,29 +100,28 @@ form {
 @media only screen and (min-width: 768px) {
   .page {
     max-width: 90%;
-    padding: 0 24px; /* Más espacio lateral */
+    padding: 0 24px; 
   }
+}
 
   form {
-    flex-direction: row; /* Elementos en fila */
-    flex-wrap: wrap; /* Permite que pasen a una nueva línea si no caben */
+    flex-direction: row; 
+    flex-wrap: wrap; 
     gap: 16px;
   }
 
-
   form button {
-    padding: 10px 20px; /* Botón más cómodo para interactuar */
+    padding: 10px 20px; 
     font-size: 16px;
   }
 
   .heroes {
-    grid-template-columns: repeat(2, 1fr); /* Dos columnas para tablets */
-    gap: 24px; /* Más espacio entre tarjetas */
-  }
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 24px; 
 
   .hero {
     padding: 1.2rem;
-    font-size: 1rem; /* Texto ligeramente más grande */
-    border-radius: 10px; /* Bordes más suaves */
+    font-size: 1rem; 
+    border-radius: 10px; 
   }
 }
