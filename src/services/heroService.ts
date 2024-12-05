@@ -10,6 +10,7 @@ export const searchHeroes = async ({
         if (!response.ok) {
             throw new Error(`Error en la respuesta: ${response.status} ${response.statusText}`);
           }
+          
         const json = await response.json()
         const heroes = json.results
   

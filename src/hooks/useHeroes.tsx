@@ -14,9 +14,9 @@ export function useHeroes({ search, sort }: UseHeroesProps) {
   const totalHeroes = heroes.length
   const lastIndex = currentPage * heroesPerPage
   const firstIndex = lastIndex - heroesPerPage
-  //callback to creat the function only when search is use
-  const getHeroes = useCallback(async (
-    { search }: { search: string }
+  
+  const getHeroes = useCallback (async (
+    { search }: { search: string } //paso search por parametro para que no dependa del estado
   ) => {
     if (search === previousSearch.current) return;
     setIsSearchPerformed(true)
@@ -39,19 +39,19 @@ export function useHeroes({ search, sort }: UseHeroesProps) {
       setLoading(false);
     }
   }, []);
-  //useMemo for calculation
+  //useMemo unicamente para calculos
   const sortedHeroes = useMemo(() => {
     return sort
       ? [...heroes].sort((a, b) => a.name.localeCompare(b.name))
       : heroes;
-  }, [sort, heroes]);
+  }, [ sort, heroes]);
 
   return { 
     heroes: sortedHeroes,
-    currentPage,
-    setCurrentPage,
-    heroesPerPage,
     getHeroes, 
+    setCurrentPage,
+    currentPage,
+    heroesPerPage,
     loading, 
     error,
     totalHeroes,

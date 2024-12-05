@@ -4,7 +4,7 @@ import { UseSearchReturn } from "../lib/definitions/search"
 export function useSearch() : UseSearchReturn {
     const [search, setSearch] = useState<string>('')
     const [error, setError] = useState<string | null>(null)
-    const isFirstInput = useRef<boolean>(true)
+    const isFirstInput = useRef<boolean>(true) // flag para saber si el usuario uso o no el input
   
   useEffect(() => {
     if(isFirstInput.current){
@@ -21,6 +21,7 @@ export function useSearch() : UseSearchReturn {
       setError("La búsqueda debe tener al menos 3 caracteres")
     }
     setError(null)
+    
   }, [search])
 
     return { search, setSearch, error }

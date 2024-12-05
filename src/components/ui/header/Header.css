@@ -5,8 +5,8 @@ h1 {
     border: 2px solid #ffe81f; 
     padding: 0.5rem 2rem;
     display: inline-block;
-    background-color: rgba(0, 0, 0, 0.5); 
-    box-shadow: 0 0 10px #ffe81f, 0 0 20px #ffe81f; 
+    background-color: rgba(0, 0, 0, 0.1); 
+    box-shadow: 0 0 10px #ffe81f, 0 0 20px #ffe81f;
   }
 
   

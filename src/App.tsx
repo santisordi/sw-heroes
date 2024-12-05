@@ -16,11 +16,11 @@ const App: React.FC = () => {
   const {
     heroes,
     loading,
+    getHeroes,
     currentPage,
     setCurrentPage,
     totalHeroes,
     heroesPerPage,
-    getHeroes,
     lastIndex, 
     firstIndex,
     isSearchPerformed
@@ -28,12 +28,10 @@ const App: React.FC = () => {
     search,
     sort,
   });
-
   const { handleSubmit, handleChange } = useSearchForm({
     getHeroes,
     setSearch,
   });
-
   const {
     showPagination,
   } = useHeroSelection();

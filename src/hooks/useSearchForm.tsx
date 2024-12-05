@@ -6,7 +6,7 @@ export function useSearchForm({ getHeroes, setSearch }: UseSearchFormProps) : Us
   // Debounce for search delay
   const debouncedGetHeroes = useCallback(
     debounce((search : string) => {
-      getHeroes({ search })
+      getHeroes({ search }) 
     }, 500),
     [getHeroes]
   )
@@ -15,14 +15,17 @@ export function useSearchForm({ getHeroes, setSearch }: UseSearchFormProps) : Us
     event.preventDefault();
     const form = event.target as HTMLFormElement;
     const input = form.elements.namedItem('search') as HTMLInputElement;
-    getHeroes({ search: input.value });
+
+    getHeroes({ search : input.value });
   };
 
   const handleChange = (event: FormEventWithChange) => {
     const newSearch = event.target.value;
+    if(newSearch.startsWith(' ')) return
     setSearch(newSearch);
     debouncedGetHeroes(newSearch);
   };
 
   return { handleSubmit, handleChange }
 }
+ 

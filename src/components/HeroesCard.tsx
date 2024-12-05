@@ -1,3 +1,4 @@
+import "./HeroesCards.css"
 import { HeroesCardProps } from "../lib/definitions/heroes";
 
 export function HeroesCard ({ hero }: HeroesCardProps){
@@ -9,7 +10,7 @@ export function HeroesCard ({ hero }: HeroesCardProps){
          {
             <div className="hero">
                 <h3>{hero.name}</h3>
-                <img src={heroImage} alt={hero.name} />
+                <img className="hero-image" src={heroImage} alt={hero.name} />
                 <p>Gender: {hero.gender}</p>
                 <p>Heigth: {hero.height}</p>
                 <p>Mass:{hero.mass}</p>

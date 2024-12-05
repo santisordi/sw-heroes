@@ -8,6 +8,7 @@ export function SearchForm({
   sort,
   error,
 }: SearchFormProps) {
+  
   return (
     <form className="form" onSubmit={handleSubmit}>
       <input
@@ -21,7 +22,7 @@ export function SearchForm({
         }}
       />
       Sort by name
-      <input type="checkbox" onChange={handleSort} checked={sort} />
+      <input type="checkbox" onChange={handleSort} checked={sort} value={search} />
       <button type="submit">buscar</button>
       {error && (
         <p style={{ color: "red" }} className="error">
